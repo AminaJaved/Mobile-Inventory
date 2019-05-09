@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderInfo</title>
+</head>
+<body>
+    <h3>List Orders</h3>
+    <table cellpadding="2" border="1">
+        <tr>
+            <th>o_id</th>
+            <th>o_date</th>
+            <th>o_qty</th>
+            <th>o_bill</th>
+            <th>o_unitprice</th>
+        </tr>
+        @foreach (var p in ViewBag.ListOrders)
+        {
+            <tr>
+                <td>@p.o_id</td>
+                <td>@p.o_date</td>
+                <td>@p.o_qty</td>
+                <td>@p.o_bill</td>
+                <td>@p.o_unitprice</td>
+            </tr>
+
+        }
+    </table>
+    <br /><br />
+    <a href="@Url.Action("Export1","Admin")">Export Report</a>
+</body>
+</html>
